@@ -49,7 +49,7 @@ const Apy: React.FC<ApyProps> = ({ pid, lpTokenAddress, symbolShort, tokenSymbol
 
     return (
         <StyledApy>
-            <StyledBox className="col-3">
+            <StyledBox >
                 <StyledLabel>APY</StyledLabel>
                 <StyledContent>{
                 newReward && stakedValue && bscxPrice && stakedValue.usdValue && stakedValue.totalToken2Value && stakedValue.poolWeight ?
@@ -61,19 +61,15 @@ const Apy: React.FC<ApyProps> = ({ pid, lpTokenAddress, symbolShort, tokenSymbol
                     .toFixed(2)).toLocaleString('en-US')}%` : 'loading'
                 }</StyledContent>
             </StyledBox>
-            <StyledBox className="col-7">
+            <StyledBox >
                 <StyledLabel>Total Staked LP Token</StyledLabel>
                 <StyledContent>
                     {stakedValue && stakedValue.tokenAmount ? (stakedValue.tokenAmount as any).toFixed(2).toLocaleString('en-US'): '~'} <span style={{fontSize: 10}}>{tokenSymbol}</span>
                     &nbsp; + &nbsp;
                     {stakedValue && stakedValue.token2Amount ? (stakedValue.token2Amount as any).toFixed(2).toLocaleString('en-US'): '~'} <span style={{fontSize: 10}}>{token2Symbol}</span></StyledContent>
-                <StyledEquility>{totalStake  ? getBalanceNumber(totalStake) : '~'} <span style={{fontSize: 10}}>{symbolShort} LP</span></StyledEquility>
+                <StyledEquility>{totalStake  ? getBalanceNumber(totalStake).toFixed(2): '~'} <span style={{fontSize: 10}}>{symbolShort} LP</span></StyledEquility>
             </StyledBox>
-            <StyledBox className="col-2">
-                <StyledLabel>Reward per block</StyledLabel>
-                <StyledContent>{newReward ? getBalanceNumber(newReward).toFixed(2) : '~'} BSCX</StyledContent>
-                <StyledEquility>≈ {stakedValue && newReward && bscxPrice && bscxPrice.times(newReward).div(10 ** 18).toFixed(2)} USD</StyledEquility>
-            </StyledBox>
+           
         </StyledApy>
     )
 }

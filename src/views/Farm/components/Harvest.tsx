@@ -20,7 +20,7 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
   const { onReward } = useReward(pid)
   const reward = getBalanceNumber(earnings)
   const lockReward = reward * 0.75
-  const avaiableReward = reward * 0.25
+  const avaiableReward = reward 
 
   return (
     <Card>
@@ -28,22 +28,17 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
         <StyledCardContentInner>
           <StyledCardHeader>
             <StyledValue>
-              <Label text="BSCX Reward" />
+              <Label text="GAME Reward" />
               <br/>
-              <Value value={getBalanceNumber(earnings)}/>
+              <ValueStyled>{getBalanceNumber(earnings).toFixed(20)} </ValueStyled>
               <br/>
-              {earnings &&
-                <div style={{marginTop: 0}}>
-                  <span style={{color: '#fff'}}>Available: {avaiableReward && avaiableReward.toFixed(3)} <br /> Locked: {lockReward && lockReward.toFixed(3)}
-                  </span>
-                </div>
-              }
+             
             </StyledValue>
           </StyledCardHeader>
           <StyledCardActions>
             <Button
               disabled={!earnings.toNumber() || pendingTx}
-              text={pendingTx ? 'Collecting BSCX' : 'Harvest'}
+              text={pendingTx ? 'Collecting GAME' : 'Harvest'}
               onClick={async () => {
                 setPendingTx(true)
                 await onReward()
@@ -86,6 +81,13 @@ const StyledCardContentInner = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+`
+
+const ValueStyled = styled.div`
+  font-family: 'Nunito Sans', sans-serif;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
 `
 
 export default Harvest

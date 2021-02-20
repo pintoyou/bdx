@@ -10,9 +10,7 @@ import CardIcon from '../../../components/CardIcon'
 import Loader from '../../../components/Loader'
 import Spacer from '../../../components/Spacer'
 import { Farm } from '../../../contexts/Farms'
-import useAllStakedValue, {
-  StakedValue,
-} from '../../../hooks/useAllStakedValue'
+import useAllStakedValue, { StakedValue } from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
 import useBSCXPrice from '../../../hooks/useBSCXPrice'
 import usePoolActive from '../../../hooks/usePoolActive'
@@ -155,7 +153,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
                 />
               )}
             </Button>
-            <br/>
+          
             <StyledInsight>
               <span>Total Locked Value</span>
               <span>

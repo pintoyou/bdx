@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Route, Switch, useRouteMatch } from 'react-router-dom'
 import { useWallet } from 'use-wallet'
-
+import Spacer from '../../../components/Spacer'
 import Logo from '../../../assets/img/balance.png'
 
 import Button from '../../../components/Button'
@@ -24,15 +24,15 @@ const FarmsContainer: React.FC = () => {
 
   return <>
     <Route exact path={path}>
-      <PageHeader
-        icon={<img src={Logo} height="185" />}
-               
-      />
-        <Box className="mt-4">
-            <StyledHeading></StyledHeading>
+   
+    <Box className="mt-4">   
+          
             <StyledHeading>Earn GAME tokens by staking LP token</StyledHeading>
-      <FarmCards />
-      </Box>
+            <Spacer />
+            <Spacer />
+            <Spacer />
+             <FarmCards /></Box> 
+      
     </Route>
     <Route path={`${path}/:farmId`}>
       <Farm />

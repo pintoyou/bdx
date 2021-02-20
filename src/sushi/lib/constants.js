@@ -49,7 +49,7 @@ export const contractAddresses = {
     97: '0xEFceA9c937D8a4c91244F16dBA188C33F27A7Dba'
   },
   xSushi: {
-    56: '0xF1CE70C337EcCD47A998be0Bb07E49188Bc60A3c', // BSCXSafe
+    56: '0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9', // GAMESafe
     97: '0x5838ef045E4125aE63bE5CD9752cF007B9E82ceD'
   },
   maker: {
@@ -81,24 +81,24 @@ export const supportedPools = [
       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
       97: '0xae13d989dac2f0debff460ac112a837c89baa7cd'
     },
-    name: 'BSCX - BUSD',
-    symbol: 'BSCX-BUSD LP',
-    symbolShort: 'BSCX-BUSD',
-    description: `Deposit BSCX-BUSD LP Earn BSCX`,
-    tokenSymbol: 'BSCX',
+    name: 'GAME - BUSD',
+    symbol: 'GAME-BUSD LP',
+    symbolShort: 'GAME-BUSD',
+    description: `Deposit GAME-BUSD LP Earn GAME`,
+    tokenSymbol: 'GAME',
     token2Symbol: 'BUSD',
-    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/GAME.png',
     icon2: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4687.png',
     isHot: true,
     isNew: true,
     protocal: 'BSCEX',
-    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/GAME.png',
     pairLink: '/',
     addLiquidityLink: 'https://swapv1.bscex.org/#/add/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9',
     removeLiquidityLink: 'https://swapv1.bscex.org/#/remove/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56/0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9'
   },
   {
-    pid: 1,
+    pid: 2,
     lpAddresses: {
       56: '0x20781bc3701c5309ac75291f5d09bdc23d7b7fa8',
       97: '0xfbAC427F266dcd0d963c080d9Eb1149B5dD28aeC',
@@ -111,49 +111,23 @@ export const supportedPools = [
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
       97: '0xae13d989dac2f0debff460ac112a837c89baa7cd'
     },
-    name: 'BSCX - BNB',
-    symbol: 'BSCX-BNB LP',
-    symbolShort: 'BSCX-BNB',
-    description: `Deposit BSCX-BNB LP Earn BSCX`,
-    tokenSymbol: 'BSCX',
+    name: 'GAME - BNB',
+    symbol: 'GAME-BNB LP',
+    symbolShort: 'GAME-BNB',
+    description: `Deposit GAME-BNB LP Earn GAME`,
+    tokenSymbol: 'GAME',
     token2Symbol: 'BNB',
-    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/GAME.png',
     icon2: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png',
     isHot: true,
     isNew: true,
     protocal: 'BSCEX',
-    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
+    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/GAME.png',
     pairLink: '/',
     addLiquidityLink: 'https://swapv1.bscex.org/#/add/0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     removeLiquidityLink: 'https://swapv1.bscex.org/#/remove/0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
   },
-  {
-    pid: 2,
-    lpAddresses: {
-      56: '0xeb0bab8f337ea2053457decce15e93005b59326a'
-    },
-    tokenAddresses: {
-      56: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'
-    },
-    token2Addresses: {
-      56: '0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9'
-    },
-    name: 'BSCX - CAKE',
-    symbol: 'BSCX-CAKE LP',
-    symbolShort: 'BSCX-CAKE',
-    description: `Deposit BSCX-CAKE LP Earn BSCX`,
-    tokenSymbol: 'BSCX',
-    token2Symbol: 'CAKE',
-    icon: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
-    icon2: 'https://raw.githubusercontent.com/Bscex/bscex-token-list/master/images/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png',
-    isHot: true,
-    isNew: true,
-    protocal: 'BSCEX',
-    iconProtocal: 'https://nextyezpay.s3-ap-southeast-1.amazonaws.com/bscx.png',
-    pairLink: '/',
-    addLiquidityLink: 'https://swapv1.bscex.org/#/add/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9',
-    removeLiquidityLink: 'https://swapv1.bscex.org/#/remove/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/0xa0ccf44ba5d67e0095247f78c697ad7cbd6e63e9'
-  },
+
 ]
 // .map(e => {
 //   if (

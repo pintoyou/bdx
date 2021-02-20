@@ -78,7 +78,10 @@ const Farm: React.FC = () => {
   }, [ethereum, lpTokenAddress])
 
   return (
-    <>
+    <>   
+    
+      <StyledFarm>
+      <Box className="mt-4">  
       <PageHeader
         icon={
           <div style={{display: 'flex'}}>
@@ -88,15 +91,7 @@ const Farm: React.FC = () => {
         subtitle={isHot ? '' : description}
         title={name}
       />
-      <StyledFarm>
-        {/*isHot &&
-          <StyledInfo style={{color: '#F44336'}}>
-            👉 This pool has been rotated out from farming set of the week.<br/>
-          You will no longer receive rewards when staking with it
-          </StyledInfo>
-        */}
-        {/*<Spacer size="md"/>*/}
-        <StyledApyWrap>
+             <StyledApyWrap>
           <Apy
             pid={pid}
             lpTokenAddress={lpTokenAddress}
@@ -108,11 +103,11 @@ const Farm: React.FC = () => {
         <StyledHeading>Your staking</StyledHeading>
         {account &&
           <StyledCardsWrapper>
+             
             <StyledCardWrapper>
               <Harvest pid={pid} />
-            </StyledCardWrapper>
-            <Spacer />
-            <StyledCardWrapper>
+              <Spacer />
+              <Spacer />
               <Stake
                 lpContract={lpContract}
                 pid={pid}
@@ -121,6 +116,8 @@ const Farm: React.FC = () => {
                 token2Symbol={token2Symbol}
               />
             </StyledCardWrapper>
+            <Spacer />
+            <Spacer />
           </StyledCardsWrapper>
         }
         {!account && <StyledCardsWrapper>
@@ -139,42 +136,15 @@ const Farm: React.FC = () => {
             </div>
         </StyledCardsWrapper>}
         <Spacer size="lg" />
-        {!isHot &&
-          <StyledInfo style={{color: '#ff9800'}}>
-            👉 Every time you stake and unstake LP tokens, the contract will<br/>
-            automatically harvest BSCX rewards for you!
-          </StyledInfo>
-        }
-        <Spacer size="lg" />
-        <StyledCardsWrapper>
-          <div>
-            <div style={{color: '#ffffff', fontWeight: 'bold', fontSize: 14, marginBottom: 10}}>
-              MAYBE YOU DON'T KNOW
-            </div>
-            <StyledInfoLP>
-              <img src={iconProtocal} height="50" style={{marginTop: 5}} />
-              <div style={{width: 'calc(100% - 70px', color: '#ffffff', fontSize: 16, marginLeft: 20, marginRight: 20}}>
-                <div>Add/Remove liquidity to <a style={{color: '#f6b944', textDecoration: 'none'}} href={pairLink} target="__blank"><b>{symbolShort} pair</b></a> on {protocal} to get <span style={{color: '#f6b944'}}>{lpToken}</span> tokens. Then deposit those LP tokens on swap.bscex.org to receive rewards</div>
-                <Spacer size="sm" />
-                <a style={{color: '#f6b944'}} target="__blank" href={addLiquidityLink}>
-                  <b>Add Liquidity on {protocal}</b>
-                </a>&nbsp;&nbsp;
-                <a style={{color: '#f6b944'}} target="__blank" href={removeLiquidityLink}>
-                  <b>Remove Liquidity on {protocal}</b>
-                </a>
-              </div>
-            </StyledInfoLP>
-          </div>
-        </StyledCardsWrapper>
-
-        <Spacer size="md" />
+        </Box> 
       </StyledFarm>
+      
     </>
   )
 }
 
 const StyledApyWrap = styled.div`
-  width: 600px;
+  width: 550px;
   @media (max-width: 767px) {
     width: 100%;
   }
@@ -236,5 +206,15 @@ const StyledInfoLP = styled.div`
   background: #00ff5d0f;
   border-radius: 12px;
 `
-
+const Box = styled.div`
+    &.mt-4 {
+        margin-top: 40px;
+        @media (max-width: 767px) {
+            margin-top: 30px;
+        }
+    }
+   
+    align-items: center;
+    
+`
 export default Farm
